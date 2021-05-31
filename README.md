@@ -27,6 +27,8 @@ Create a vulnerable active directory that's allowing you to test most of active 
 
 ### Example
 ```powershell
+# install the pre-requisite tools
+Install-WindowsFeature –Name AD-Domain-Services -IncludeManagementTools
 # if you didn't install Active Directory yet , you can try 
 Install-ADDSForest -CreateDnsDelegation:$false -DatabasePath "C:\\Windows\\NTDS" -DomainMode "7" -DomainName "cs.org" -DomainNetbiosName "cs" -ForestMode "7" -InstallDns:$true -LogPath "C:\\Windows\\NTDS" -NoRebootOnCompletion:$false -SysvolPath "C:\\Windows\\SYSVOL" -Force:$true
 # if you already installed Active Directory, just run the script !
